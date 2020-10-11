@@ -1,0 +1,27 @@
+html,
+body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff6600;
+  background: url(../images/login_bg.jpg) no-repeat;
+  /* cover:图片纵横比将图片完全覆盖背景区域 */
+  background-size: cover; 
+}
+.loginAnd{
+  width: 400px;
+  height: 310px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.logintitle {
+  height: 60px;
+  background: url(../images/login_title.png) no-repeat center;
+}
+.login-dl{
+  display: none;
+}

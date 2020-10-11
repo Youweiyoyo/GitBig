@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大事件-登录界面</title>
+    <!-- 导入自己的Css样式 -->
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <!-- 导入layuicss -->
+    <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+</head>
+
+<body>
+    <!-- 头部logo区 -->
+    <div class="layui-main">
+        <img src="./assets/images/logo.png" alt="">
+    </div>
+    <!-- 登录区域 -->
+    <div class="loginAnd">
+        <!-- 登录框头部 -->
+        <div class="logintitle"></div>
+        <!-- 表单 -->
+        <form class="layui-form" action="">
+            <!-- 用户名 -->
+            <div class="layui-form-item">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名" autocomplete="off"
+                    class="layui-input">
+            </div>
+            <!-- 密码 -->
+            <div class="layui-form-item">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+                    class="layui-input">
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="formDemo">立即提交</button>
+            </div>
+        </form>
+        <!-- 去登陆 -->
+        <div class="login-zc">
+            <a href="jacascript:;" id="zc">去注册</a>
+        </div>
+        <!-- 去注册 -->
+        <div class="login-dl">
+            <a href="javascript:;" id="dl">去登录</a>
+        </div>
+    </div>
+    <!-- 导入jQuery -->
+    <script src="./assets/lib/jquery.js"></script>
+    <!-- 导入自己的js -->
+    <script src="./assets/js/login.js"></script>
+</body>
+
+</html>
