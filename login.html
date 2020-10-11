@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>大事件-登录界面</title>
-    <!-- 导入自己的Css样式 -->
-    <link rel="stylesheet" href="./assets/css/login.css">
     <!-- 导入layuicss -->
     <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+    <!-- 导入自己的Css样式 -->
+    <link rel="stylesheet" href="./assets/css/login.css">
 </head>
 
 <body>
@@ -20,31 +20,64 @@
     <div class="loginAnd">
         <!-- 登录框头部 -->
         <div class="logintitle"></div>
-        <!-- 表单 -->
-        <form class="layui-form" action="">
-            <!-- 用户名 -->
-            <div class="layui-form-item">
-                <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名" autocomplete="off"
-                    class="layui-input">
-            </div>
-            <!-- 密码 -->
-            <div class="layui-form-item">
-                <input type="text" name="title" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
-                    class="layui-input">
-            </div>
-            <div class="layui-form-item">
-                <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="formDemo">立即提交</button>
-            </div>
-        </form>
-        <!-- 去登陆 -->
-        <div class="login-zc">
-            <a href="jacascript:;" id="zc">去注册</a>
+        <!-- 登录的div -->
+        <div class="login-zc ">
+            <!-- 表单 -->
+            <form class="layui-form" action="">
+                <!-- 用户名 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="pawd" required lay-verify="required|pwd" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item ">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit
+                        lay-filter="formDemo">登录</button>
+                </div>
+                <div class="layui-form-item  liks">
+                    <a href="jacascript:;" id="zc">去注册账号</a>
+                </div>
+            </form>
         </div>
-        <!-- 去注册 -->
+        <!-- 注册的div -->
         <div class="login-dl">
-            <a href="javascript:;" id="dl">去登录</a>
+            <form class="layui-form" action="">
+                <!-- 用户名 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 密码确认框 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="pawd" required lay-verify="required|pwd|repwd" placeholder="再次输入确认密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item ">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit
+                        lay-filter="formDemo">登录</button>
+                </div>
+                <div class="layui-form-item  liks">
+                    <a href="javascript:;" id="dl">去登录</a>
+                </div>
+            </form>
         </div>
     </div>
+    <!-- 导入layui的js -->
+    <script src="./assets/lib/layui/layui.all.js"></script>
     <!-- 导入jQuery -->
     <script src="./assets/lib/jquery.js"></script>
     <!-- 导入自己的js -->

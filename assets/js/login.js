@@ -83,4 +83,16 @@ $(function () {
     $('.login-dl').hide();  // hide隐藏
     $('.login-zc').show(); // show显示
   })
+  // 从layui中获取from对象
+  var form = layui.form
+  form.verify({
+    // 自定义了一个pwd的校验规则
+    pwd: [/^[\s]{6,12}$/, '密码必须是6-12位，且不能出现空格'],
+    repwd: function (value) {
+      var paw = $('.login-dl [name=password]').val();
+      if (paw !== value) {
+        return '您输入的两次密码不一致！'
+      }
+    }
+  })
 })
