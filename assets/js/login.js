@@ -84,15 +84,50 @@ $(function () {
     $('.login-zc').show(); // show显示
   })
   // 从layui中获取from对象
-  var form = layui.form
+  var form = layui.form;
+  var layer = layui.layer;
   form.verify({
     // 自定义了一个pwd的校验规则
-    pwd: [/^[\s]{6,12}$/, '密码必须是6-12位，且不能出现空格'],
+    pwd: [/^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'],
+    // 通过形参获取的是确认密码框的值
     repwd: function (value) {
-      var paw = $('.login-dl [name=password]').val();
-      if (paw !== value) {
-        return '您输入的两次密码不一致！'
+      var pwd = $('.login-dl [name=password]').val();
+      if (pwd !== value) {
+        return '两次输入密码不一致'
       }
     }
+  })
+  // 监听注册表单事件
+  $('#form_res').on('submit', function (e) {
+    e.preventDefault();
+    var url = '/api/reguser';
+    var data = {
+      username: $('#form_res [name=username]').val(),
+      password: $('#form_res [name=password]').val(),
+    }
+    $.post(url, data, function (res) {
+      if (res.status !== 0) {
+        return layer.msg(res.message)
+      }
+      layer.msg('注册成功，请登录！');
+    })
+  })
+  // 登录表单事件
+  $('#form_dl').submit(function (e) {
+    e.preventDefault()
+    $.ajax({
+      method: 'POST',
+      url: '/api/login',
+      data: $(this).serialize(),
+      success: function (res) {
+        if (res.status !== 0) {
+          return layer.msg('登录失败！')
+        }
+        layer.msg('登录成功！'),
+          console.log(res.token);
+        localStorage.setItem('token', res.token)
+        location.href = 'index.html'
+      }
+    })
   })
 })

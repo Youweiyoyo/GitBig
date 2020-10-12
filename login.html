@@ -21,9 +21,9 @@
         <!-- 登录框头部 -->
         <div class="logintitle"></div>
         <!-- 登录的div -->
-        <div class="login-zc ">
+        <div class="login-zc">
             <!-- 表单 -->
-            <form class="layui-form" action="">
+            <form class="layui-form" action="" id="form_dl">
                 <!-- 用户名 -->
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-username"></i>
@@ -33,7 +33,7 @@
                 <!-- 密码 -->
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-password"></i>
-                    <input type="password" name="pawd" required lay-verify="required|pwd" placeholder="请输入密码"
+                    <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码"
                         autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item ">
@@ -47,7 +47,7 @@
         </div>
         <!-- 注册的div -->
         <div class="login-dl">
-            <form class="layui-form" action="">
+            <form class="layui-form" action="" id="form_res">
                 <!-- 用户名 -->
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-username"></i>
@@ -63,12 +63,12 @@
                 <!-- 密码确认框 -->
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-password"></i>
-                    <input type="password" name="pawd" required lay-verify="required|pwd|repwd" placeholder="再次输入确认密码"
-                        autocomplete="off" class="layui-input">
+                    <input type="password" name="respassword" required lay-verify="required|pwd|repwd"
+                        placeholder="再次输入确认密码" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item ">
                     <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit
-                        lay-filter="formDemo">登录</button>
+                        lay-filter="formDemo">注册</button>
                 </div>
                 <div class="layui-form-item  liks">
                     <a href="javascript:;" id="dl">去登录</a>
@@ -80,6 +80,8 @@
     <script src="./assets/lib/layui/layui.all.js"></script>
     <!-- 导入jQuery -->
     <script src="./assets/lib/jquery.js"></script>
+    <!-- 导入baseAPI -->
+    <script src="./assets/js/baseAPI.js"></script>
     <!-- 导入自己的js -->
     <script src="./assets/js/login.js"></script>
 </body>
